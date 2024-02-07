@@ -18,6 +18,7 @@
             </tr>
         </thead>
         <tbody>
+            <!-- for문으로 articles 객체의 모든 데이터를 하나씩 받고 테이블 형태로 보여줌. -->
             {% for article in articles %}
             <tr>
                 <td><a href="{% url 'detail' article.id %}">{{article.title}}</a></td>

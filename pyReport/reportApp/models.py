@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# 데이터 모델 객체
 class myReport(models.Model):
     title = models.CharField(max_length=200)
     pub_date = models.DateTimeField()

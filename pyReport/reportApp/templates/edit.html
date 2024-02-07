@@ -9,6 +9,7 @@
 <body>
     <form action="{% url 'update' article.id %}" method="POST">
         {% csrf_token %}
+        <!-- post로 템플릿의 데이터를 views.py의 edit함수로 제출. -->
         <label for="title">제목</label>
         <input type="text" name="title" id="title" value="{{article.title}}">
         <br>
