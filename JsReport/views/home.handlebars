@@ -1,0 +1,26 @@
+<!-- 제목 -->
+<h1>{{title}}</h1>
+
+<!-- 글쓰기 페이지로 이동  -->
+<a href="/write"> 오늘은 무엇을 배웠나요?</a>
+<hr/>
+
+<!-- 글 목록 -->
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th width="60%">제목</th>
+        <th width="60%">키워드</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each posts}}
+      <tr>
+        <td><a href="/detail/{{_id}}">{{title}}</a></td>
+        <td>{{keyword}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

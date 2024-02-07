@@ -1,0 +1,62 @@
+<!-- 사용자 뷰, 뷰의 기능들을 밑에 구현. -->
+
+<h1>{{title}}</h1>
+{{#with post}} <!-- post 객체를 쉽게 사용하도록 with로 감싸기 -->
+<hr/>
+
+<div>
+  요약
+  <pre>{{title}}</pre> <!-- 본문 내용 -->
+</div>
+<hr/>
+
+<div>
+  핵심 키워드
+  <pre>{{keyword}}</pre> <!-- 본문 내용 -->
+</div>
+<hr/>
+
+
+  <button onclick="modifyPost()">수정</button>
+  <button onclick="deletePost()">삭제</button>
+</div>
+
+{{/with}}
+<footer>
+  <div>
+    <a href="/">목록으로</a>
+  </div>
+</footer>
+
+<!-- 기능 구현-->
+<script>
+  const postOption = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }
+
+  async function modifyPost() {
+      document.location = "/modify/{{post._id}}"
+  }
+
+  const deleteOption = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }
+
+  async function deletePost() {
+
+    const result = await fetch("/delete", {   // fetch API를 사용해 delete API를 호출 
+      ...deleteOption,
+      body: JSON.stringify({ id: "{{post._id}}"})
+    });
+
+    document.location = "/";
+  }
+
+
+</script>
