@@ -1,0 +1,23 @@
+{{>layouts/header}}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">summary</th>
+        <th scope="col">keyword</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#article}}
+        <tr>
+            <td>{{summary}}</td>
+            <td>{{keyword}}</td>
+        </tr>
+    {{/article}}
+    </tbody>
+</table>
+
+<a href="/articles/{{article.id}}/edit" class="btn">수정</a>
+<a href="/articles/{{article.id}}/delete" class="btn">삭제</a>
+<a href="/articles">목록으로</a>
+
+{{>layouts/footer}}

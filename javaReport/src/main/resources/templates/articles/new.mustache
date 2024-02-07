@@ -1,0 +1,16 @@
+{{>layouts/header}}
+
+<form class="container" action="/articles/create" method="post">
+    <div class="mb-3">
+        <label class="form-label">오늘 배운 내용을 짧게 요약하세요.</label>
+        <input type="text" class="form-control" name="summary">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">핵심 키워드</label>
+        <textarea class="form-control" rows="3" name="keyword"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/articles">Back</a>
+</form>
+
+{{>layouts/footer}}
