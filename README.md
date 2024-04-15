@@ -38,3 +38,21 @@
         - entity : 1차 가공된 dto를 db에 접근 가능한 메타 데이터로 가공
         - repository : 모든 entity 즉, 데이터를 불러옴
         - templates : 사용자 뷰
+## pythonReport
+    - 특징 및 환경 설정
+    - Model, Template, View에 어떠한 기술 엔진을 적용하는가?
+        - controller(api,router) → views.py가 api역할을 하며, views.py에서 db를 조작하고 템플릿을 렌더링하거나 다른 api를 redirect 시킨다.
+        - model → models.py에서 데이터 객체를 생성(스키마 생성)하고 views.py에서 db를 조작.
+        - view → html로 작성.
+    - 초기 설정(모듈 설치)
+        1. `python3 -m venv myvenv`으로 가상환경을 생성하고 `source myvenv/bin/activate`으로 실행한다.
+        2. `pip install django`로 장고를 설치한다.
+        3. `django-admin startproject`으로 새 프로젝트를 생성하고 해당 프로젝트 폴더 위치에서 `python3 manage.py 앱명`으로 앱을 만든다.
+        4. settings.py에 앱을 등록해주고 앱 폴더에 위치한 models.py에 데이터와 메타 데이터를 작성한다. 
+        5. 모델이 작성 되었으면 마이그레이션으로 모델에 맞는 테이블을 생성하고 마이그레이트 명령어로 db에 저장한다.
+        6. 작성된 데이터를 관리하기 위한 관리자 계정을 앱 폴더에 위치한 admins.py에 admin.site.register(myReport)으로 데이터 모델을 등록한다.
+    - 파일 구조
+        1. myReport : 프로젝트 이름이다. myReport에 위치한 urls.py에 라우팅 코드를 작성한다.
+        2. myvenv : 가상 환경을 의미한다. myvenv로 서버를 동작 시킨다.
+        3. reportApp : 기능의 중심 역할을 하는 app 폴더다. 사용자 인터페이스 templates, 관리자 계정을 등록하는 [admin.p](http://admin.py)y, 데이터 모델을 생성시키는 models.py를 가진다.
+        4. [views.py](http://views.py) : reportApp 폴더에 위치하며 urls.py에서 라우팅되는 서비스다.
