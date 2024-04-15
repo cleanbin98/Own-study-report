@@ -29,12 +29,12 @@
     - controller(api,router) → controller가 api역할을 하며, controller에서 db를 조작하고 템플릿을 렌더링하거나 다른 api를 redirect 시킨다.
     - model → dto, entity로 데이터 객체를 생성(스키마 생성)하고 controller에서 db 조작
     - view → mustache로 작성
-- 초기 설정(모듈 설치)
-    - 스프링 init에서 필요한 의존성 기능을 주입한다.
-    - 의존성으로는 Spring Web, H2 DB, Mustache, Spring Data JPA가 있다.
-- 파일 구조
-    - controller : router, service 기능을 수행하고 뷰에서 db의 데이터를 보여주기 위해 Model장치 사용.
-    - dto : 원본 데이터를 선언하고 entity 데이터로 1차 가공
-    - entity : 1차 가공된 dto를 db에 접근 가능한 메타 데이터로 가공
-    - repository : 모든 entity 즉, 데이터를 불러옴
-    - templates : 사용자 뷰
+    - 초기 설정(모듈 설치)
+        - 스프링 init에서 필요한 의존성 기능을 주입한다.
+        - 의존성으로는 Spring Web, H2 DB, Mustache, Spring Data JPA가 있다.
+    - 파일 구조
+        - controller : router, service 기능을 수행하고 뷰에서 db의 데이터를 보여주기 위해 Model장치 사용.
+        - dto : 원본 데이터를 선언하고 entity 데이터로 1차 가공
+        - entity : 1차 가공된 dto를 db에 접근 가능한 메타 데이터로 가공
+        - repository : 모든 entity 즉, 데이터를 불러옴
+        - templates : 사용자 뷰
